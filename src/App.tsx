@@ -1,12 +1,12 @@
-import { Router } from './routes';
-import { Theme } from './themes';
-
-export const App = () => {
+import { Outlet } from 'react-router-dom';
+function App() {
   return (
-    <Theme>
-      <Router />
-    </Theme>
+    <div className='App'>
+      <div className='main-container'>
+        <Outlet />
+      </div>
+    </div>
   );
-};
+}
 
 export default App;
