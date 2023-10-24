@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Theme from '../../theme/theme';
+import styled from 'styled-components'
+import Theme from '../../theme/theme'
 
 export const CardWrapper = styled.div`
   align-items: center;
@@ -12,7 +12,7 @@ export const CardWrapper = styled.div`
   background-color: ${Theme.colors.gray[600]};
   width: 18vw;
   height: 40vh;
-`;
+`
 export const CoverImg = styled.img`
   height: 50%;
   width: 90%;
@@ -22,4 +22,4 @@ export const CoverImg = styled.img`
   top: 0;
   left: 0;
   z-index: 1;
-`;
+`

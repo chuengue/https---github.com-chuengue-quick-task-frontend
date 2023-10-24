@@ -1,13 +1,21 @@
-import styled, { css } from 'styled-components';
-import { ButtonProps } from '.';
-import { variant } from 'styled-system';
+import styled, { css } from 'styled-components'
+import {
+  color,
+  compose,
+  flexbox,
+  layout,
+  position,
+  space,
+  variant,
+} from 'styled-system'
+import { ButtonProps } from '.'
 
 export const StyledButton = styled.button<
   Omit<ButtonProps, 'color'> & {
-    buttonSize?: string;
-    color: 'purple' | 'yellow' | 'red' | 'orange' | 'gray';
-    isRounded?: boolean;
-    isLoading?: boolean;
+    buttonSize?: string
+    color: 'blue' | 'secondary' | 'red' | 'orange' | 'gray'
+    isRounded?: boolean
+    isLoading?: boolean
   }
 >`
   ${({ theme, color = 'purple', isLoading, isRounded, disabled }) => css`
@@ -16,7 +24,7 @@ export const StyledButton = styled.button<
     justify-content: center;
     font-weight: 500;
     border-radius: 8px;
-    border: 1px solid #f5f5f5;
+    cursor: pointer;
     ${isRounded &&
     css`
       border-radius: 50px;
@@ -61,34 +69,71 @@ export const StyledButton = styled.button<
               },
             },
             outlined: {
-              bg: ' transparent',
+              bg: 'transparent',
               borderColor: theme.colors[color].light,
               color:
-                color === 'gray' ? theme.colors.gray.dark : theme.colors[color].default,
+                color === 'gray'
+                  ? theme.colors.gray.dark
+                  : theme.colors[color].default,
+              '&:hover': {
+                bg: theme.colors.gray.transparency,
+              },
+              '&:focus': {
+                bg: theme.colors[color].transparency,
+                borderColor: theme.colors[color].default,
+                color:
+                  color === 'gray'
+                    ? theme.colors.gray[500]
+                    : theme.colors[color].dark,
+              },
+              '&:disabled': {
+                bg: ' transparent',
+                color: theme.colors.gray[300],
+                borderColor: theme.colors.gray.light,
+                boxShadow: 'none',
+                cursor: 'not-allowed',
+              },
+              '&:active': {
+                bg: disabled ? '' : theme.colors[color].light,
+                borderColor: disabled ? '' : theme.colors[color].light,
+                color: disabled
+                  ? ''
+                  : color === 'gray'
+                  ? theme.colors.gray[500]
+                  : theme.colors[color].dark,
+              },
             },
-            '&:hover': {
-              bg: theme.colors.gray.transparency,
-            },
-            '&:focus': {
-              bg: theme.colors[color].transparency,
-              borderColor: theme.colors[color].default,
-              color: color === 'gray' ? theme.colors.gray[500] : theme.colors[color].dark,
-            },
-            '&:disabled': {
+            text: {
               bg: ' transparent',
-              color: theme.colors.gray[300],
-              borderColor: theme.colors.gray.light,
-              boxShadow: 'none',
-              cursor: 'not-allowed',
-            },
-            '&:active': {
-              bg: disabled ? '' : theme.colors[color].light,
-              borderColor: disabled ? '' : theme.colors[color].light,
-              color: disabled
-                ? ''
-                : color === 'gray'
-                ? theme.colors.gray[500]
-                : theme.colors[color].dark,
+              border: 'none',
+              transition: 'transform 0.2s',
+              color:
+                color === 'gray'
+                  ? theme.colors.gray.dark
+                  : theme.colors[color].default,
+              '&:hover': {
+                filter: 'brightness(1.25)',
+                transform: 'scale(1.05)',
+              },
+              '&:focus': {
+                color:
+                  color === 'gray'
+                    ? theme.colors.gray[500]
+                    : theme.colors[color].dark,
+              },
+              '&:disabled': {
+                color: theme.colors.gray[300],
+                boxShadow: 'none',
+                cursor: 'not-allowed',
+              },
+              '&:active': {
+                transform: 'scale(0.9)',
+                color: disabled
+                  ? ''
+                  : color === 'gray'
+                  ? theme.colors.gray[500]
+                  : theme.colors[color].dark,
+              },
             },
           },
         })};
@@ -97,11 +142,13 @@ export const StyledButton = styled.button<
       variants: {
         xl: {
           fontSize: theme.fontSize[5],
+          fontWeight: 600,
           height: 72,
           px: 's4',
         },
         lg: {
           fontSize: theme.fontSize[3],
+          fontWeight: 600,
           height: 56,
           px: 's4',
         },
@@ -118,4 +165,5 @@ export const StyledButton = styled.button<
       },
     })}
   `}
-`;
+  ${compose(space, layout, position, color, flexbox)}
+`

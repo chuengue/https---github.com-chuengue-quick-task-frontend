@@ -1,14 +1,13 @@
-import React from 'react';
-import { Typo } from '../../components';
+import { useQuery } from 'react-query'
+import ConfigApi from '../../hooks/ConfigApi'
+import { ResponseTaskInterface } from '../../types/task.types'
 
 const Home = () => {
-  return (
-    <div>
-      <Typo variant='title' color='red'>
-        Teste
-      </Typo>
-    </div>
-  );
-};
+  const { data } = useQuery<ResponseTaskInterface>('tasks', async () => {
+    const response = await ConfigApi('http://localhost:9999').get('/task')
+    return response.data
+  })
+  return <></>
+}
 
-export default Home;
+export default Home

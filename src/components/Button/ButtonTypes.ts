@@ -5,7 +5,7 @@ import {
   PaddingProps,
   PositionProps,
   SpaceProps,
-} from 'styled-system';
+} from 'styled-system'
 
 export interface ButtonProps
   extends ColorProps,
@@ -15,10 +15,10 @@ export interface ButtonProps
     PositionProps,
     MarginProps,
     React.HTMLAttributes<HTMLButtonElement> {
-  buttonSize: string;
-  color: 'primary' | 'secondary' | 'orange' | 'destruction';
-  isRounded?: boolean;
-  isLoading?: boolean;
-  disabled?: boolean;
-  variant?: 'contained' | 'outlined';
+  buttonSize?: string
+  color?: 'primary' | 'secondary' | 'orange' | 'destruction' | 'white'
+  isRounded?: boolean
+  isLoading?: boolean
+  disabled?: boolean
+  variant?: 'contained' | 'outlined' | 'text'
 }

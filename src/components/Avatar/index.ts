@@ -1,7 +1,8 @@
-import { avataProps } from './Avatar.types';
-import Avatar from './Avatar';
+import Avatar from './Avatar'
+import { avataProps } from './Avatar.types'
 
-export { Avatar };
+export { Avatar }
 
-export default Avatar;
-export type { avataProps };
+export default Avatar
+export type { avataProps }
+

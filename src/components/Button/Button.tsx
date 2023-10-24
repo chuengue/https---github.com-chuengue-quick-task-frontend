@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { ButtonProps } from './ButtonTypes';
-import { StyledButton } from './Button.styled';
+import { FC } from 'react'
+import { StyledButton } from './Button.styled'
+import { ButtonProps } from './ButtonTypes'
 
 const Button: FC<ButtonProps> = ({
   buttonSize = 'xl',
@@ -13,11 +13,12 @@ const Button: FC<ButtonProps> = ({
   children,
 }) => {
   enum buttonColors {
-    primary = 'purple',
-    secondary = 'yellow',
+    primary = 'blue',
+    secondary = 'prussian',
     gray = 'gray',
     orange = 'orange',
     destruction = 'red',
+    white = 'white',
   }
   return (
     <StyledButton
@@ -31,6 +32,6 @@ const Button: FC<ButtonProps> = ({
     >
       {children}
     </StyledButton>
-  );
-};
-export default Button;
+  )
+}
+export default Button

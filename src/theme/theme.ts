@@ -1,12 +1,12 @@
-import pallete from './pallete';
-import { Config, system } from 'styled-system';
+import { Config, system } from 'styled-system'
+import pallete from './pallete'
 
 const shadows = {
   z1: '0px 1px 5px rgba(58, 64, 77, 0.3)',
   z2: '0px 2px 10px rgba(58, 64, 77, 0.35)',
-};
+}
 
-const colors = { ...pallete };
+const colors = { ...pallete }
 
 const space = {
   s0: '0px',
@@ -17,12 +17,12 @@ const space = {
   s5: '32px',
   s6: '40px',
   s7: '48px',
-};
+}
 
-const fontSize = [12, 14, 16, 18, 24, 32, 48];
+const fontSize = [12, 14, 16, 18, 24, 32, 48]
 
-const Theme = { colors, fontSize, shadows, space };
+const Theme = { colors, fontSize, shadows, space }
 
-system({ prop: 'cursor', cssProperty: 'cursor' } as Config);
+system({ prop: 'cursor', cssProperty: 'cursor' } as Config)
 
-export default Theme;
+export default Theme

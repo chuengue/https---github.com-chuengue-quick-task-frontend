@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { avataProps } from '..';
-import { space, variant } from 'styled-system';
+import styled, { css } from 'styled-components'
+import { space, variant } from 'styled-system'
+import { avataProps } from '..'
 
 // Defina as variações de tamanho para o avatar
 const sizeVariants = variant({
@@ -12,21 +12,20 @@ const sizeVariants = variant({
     xl: { width: '96px', height: '96px' },
     xxl: { width: '112px', height: '112px' },
   },
-});
+})
 export const AvatarWrapper = styled.img<
   Omit<
     avataProps,
     'borderColor' & {
-      borderColor: string;
+      borderColor: string
     }
   >
 >`
-  ${({ borderColor, theme }) => css`
+  ${({ theme }) => css`
     box-shadow: ${theme.shadows.z2};
     border-radius: 50%;
-    border: 10px solid ${theme.colors[borderColor ?? 'gray'].default};
     object-fit: cover;
     ${sizeVariants}
     ${space}
   `}
-`;
+`
