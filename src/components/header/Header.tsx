@@ -1,6 +1,5 @@
-import { Avatar, Button } from '..'
-import { Wrapper } from '../wrapper'
-import { HeaderWrapper } from './header.styled'
+import { Avatar, Button, Wrapper } from '..'
+import { HeaderWrapper } from './HeaderStyled'
 
 const Header = () => {
   const buttons = [
@@ -10,10 +9,10 @@ const Header = () => {
   return (
     <>
       <HeaderWrapper>
-        <Wrapper flexDirection='row'>
+        <Wrapper ml={8}>
           <Avatar
-            size='md'
-            src='https://www.w3schools.com/w3images/avatar2.png'
+            size="md"
+            src="https://www.w3schools.com/w3images/avatar2.png"
           ></Avatar>
         </Wrapper>
         <Wrapper ml={32}>
@@ -21,9 +20,9 @@ const Header = () => {
             return (
               <Button
                 key={String(index).concat(e.title)}
-                buttonSize='md'
-                color='white'
-                variant='text'
+                buttonSize="md"
+                color="white"
+                variant="text"
               >
                 {e.title}
               </Button>

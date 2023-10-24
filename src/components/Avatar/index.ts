@@ -1,5 +1,5 @@
 import Avatar from './Avatar'
-import { avataProps } from './Avatar.types'
+import { avataProps } from './AvatarTypes'
 
 export { Avatar }
 

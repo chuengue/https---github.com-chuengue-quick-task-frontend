@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import Theme from '../../theme/theme'
+import { Wrapper } from '../Wrapper'
 
-export const HeaderWrapper = styled.div`
-  align-items: cente;
-  display: flex;
-  flex-direction: row;
+export const HeaderWrapper = styled(Wrapper)`
+  align-items: center;
   padding: 8px;
   margin: 8px;
   border-radius: 16px;

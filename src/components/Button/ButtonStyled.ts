@@ -8,7 +8,7 @@ import {
   space,
   variant,
 } from 'styled-system'
-import { ButtonProps } from '.'
+import { ButtonProps } from './ButtonTypes'
 
 export const StyledButton = styled.button<
   Omit<ButtonProps, 'color'> & {

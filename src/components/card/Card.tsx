@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { CardWrapper, CoverImg } from './Card.styled'
-import { cardProps } from './cardTypes'
+import { CardProps } from '.'
+import { CardWrapper, CoverImg } from './CardStyled'
 
-const Card: FC<cardProps> = ({
+const Card: FC<CardProps> = ({
   description,
   title,
   borderColor,
