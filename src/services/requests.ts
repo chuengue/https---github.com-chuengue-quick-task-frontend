@@ -1,8 +1,8 @@
 import axios from 'axios'
 import {
-  ResponseTaskInterface,
-  SearchParams,
-  TaskInterface,
+    ResponseTaskInterface,
+    SearchParams,
+    TaskInterface,
 } from '../types/task.types'
 
 const baseURL = 'http://localhost:9999'

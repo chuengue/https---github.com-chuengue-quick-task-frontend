@@ -1,4 +1,4 @@
-import { Avatar, Button, Wrapper } from '..'
+import { Avatar, Button, Wrapper } from '../..'
 import { HeaderWrapper } from './HeaderStyled'
 
 const Header = () => {

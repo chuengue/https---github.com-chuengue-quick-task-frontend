@@ -113,7 +113,6 @@ export const StyledButton = styled.button<
                   : theme.colors[color].default,
               '&:hover': {
                 filter: 'brightness(1.25)',
-                transform: 'scale(1.05)',
               },
               '&:focus': {
                 color:

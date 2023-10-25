@@ -1,18 +1,18 @@
 import styled, { css } from 'styled-components'
 import { layout } from 'styled-system'
 import { Wrapper } from '..'
-import Theme from '../../theme/theme'
-import { TextAreaProps } from './TextAreaTypes'
+import Theme from '../../../theme/theme'
+import { InputProps } from './InputTypes'
 
-export const StyledTextArea = styled.textarea<Partial<TextAreaProps>>`
+export const StyledInput = styled.input<Partial<InputProps>>`
   background-color: ${Theme.colors.primary};
-  font-family: 'roboto', Times, serif;
   border: none;
   color: white;
   outline: none;
+  min-height: 32px;
+  width: 100%;
   border-radius: 8px;
-  padding: 16px;
-  resize: none;
+  padding: 0 16px;
 
   &:focus {
     outline: none;
@@ -29,10 +29,9 @@ export const StyledTextArea = styled.textarea<Partial<TextAreaProps>>`
 
   ${layout}
 `
-export const TextAreaWrapper = styled(Wrapper)`
+export const InputWrapper = styled(Wrapper)`
   width: 100%;
   border: 1px solid ${Theme.colors.blue.default};
-  flex-direction: column;
   border-radius: 8px;
 `
 export const StyledTypoWrapper = styled(Wrapper)`
@@ -43,4 +42,5 @@ export const StyledTypoWrapper = styled(Wrapper)`
   justify-content: center;
   align-items: center;
   width: 50px;
+  transition: opacity 0.2s ease-in-out;
 `

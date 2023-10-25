@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Theme from '../../theme/theme'
+import Theme from '../../../theme/theme'
 import { Wrapper } from '../Wrapper'
 
 export const HeaderWrapper = styled(Wrapper)`

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { space, variant } from 'styled-system'
-import { avataProps } from '..'
+import { avataProps } from '../..'
 
 // Defina as variações de tamanho para o avatar
 const sizeVariants = variant({

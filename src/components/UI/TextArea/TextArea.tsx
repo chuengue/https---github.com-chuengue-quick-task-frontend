@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Typo, Wrapper } from '..'
+import { Typo, Wrapper } from '../..'
 import {
   StyledTextArea,
   StyledTypoWrapper,
