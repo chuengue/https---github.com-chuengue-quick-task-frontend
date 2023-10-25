@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { space, color, layout, flexbox, border, position } from 'styled-system';
+import styled from 'styled-components'
+import { border, color, flexbox, layout, position, space } from 'styled-system'
 
 export const styledSystemMixin = (Component) => styled(Component)`
   ${space}
@@ -8,4 +8,4 @@ export const styledSystemMixin = (Component) => styled(Component)`
   ${flexbox}
   ${border}
   ${position}
-`;
+`
