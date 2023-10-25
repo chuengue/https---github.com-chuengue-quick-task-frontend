@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { Input, Wrapper } from '../../components'
+import { Input, TextArea, Wrapper } from '../../components'
 import ConfigApi from '../../hooks/ConfigApi'
 import { ResponseTaskInterface } from '../../types/task.types'
 
@@ -9,12 +9,20 @@ const Home = () => {
     return response.data
   })
   const handleChange = (e) => {
-    console.log(e.target.value)
+    const inputValue = e.target.value
+    console.log(inputValue.length)
   }
   return (
     <>
-      <Wrapper width="30%">
+      <Wrapper width="30%" m={20}>
         <Input label="Teste" onChange={(e) => handleChange(e)}></Input>
+      </Wrapper>
+      <Wrapper width="30%" m={20}>
+        <TextArea
+          height="400px"
+          label="textArea"
+          onChange={(e) => handleChange(e)}
+        ></TextArea>
       </Wrapper>
     </>
   )
