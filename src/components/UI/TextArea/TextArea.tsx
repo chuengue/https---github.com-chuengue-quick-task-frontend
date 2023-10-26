@@ -39,7 +39,7 @@ const TextArea: FC<TextAreaProps> = ({
           placeholder={'Escreva aqui...'}
           {...rest}
         />
-        <Wrapper flexDirection="row-reverse" mx={16} mb={8}>
+        <Wrapper mx={16} mb={8} flexDirection="row-reverse">
           <Typo variant="subtitle" color="gray">
             {inputValue.length + '/' + maxLenght}
           </Typo>

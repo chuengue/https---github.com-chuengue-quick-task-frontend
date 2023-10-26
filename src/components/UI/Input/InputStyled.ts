@@ -31,14 +31,15 @@ export const StyledInput = styled.input<Partial<InputProps>>`
 `
 export const InputWrapper = styled(Wrapper)`
   width: 100%;
+  background-color: ${Theme.colors.primary};
+
   border: 1px solid ${Theme.colors.blue.default};
   border-radius: 8px;
 `
 export const StyledTypoWrapper = styled(Wrapper)`
   position: absolute;
-  background-color: ${Theme.colors.primary};
   margin-top: -8px;
-  margin-left: 44px;
+  margin-left: 32px;
   justify-content: center;
   align-items: center;
   width: 50px;

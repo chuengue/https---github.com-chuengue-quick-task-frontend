@@ -3,6 +3,7 @@ const pallete = {
   dark: '#000',
   blue: {
     default: '#2b3459',
+    semi: '#212845',
     transparency: '#D6DAEB',
     light: '#42519A',
     dark: '#141829',
@@ -18,6 +19,11 @@ const pallete = {
     light: '#FFDAB9',
     dark: '#FF8C00',
     transparency: '#FFEFD5',
+  },
+  green: {
+    default: '#60B455',
+    light: '#60B455',
+    dark: '#488E3E',
   },
   red: {
     default: '#DF3A45',
