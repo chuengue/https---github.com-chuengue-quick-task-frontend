@@ -4,7 +4,7 @@ import ConfigApi from '../../hooks/ConfigApi'
 import { ResponseTaskInterface } from '../../types/task.types'
 
 const Home = () => {
-  const teste = [
+  const mock = [
     {
       id: 'e16e1fef-a79e-4548-8d42-5a9e3da942a1',
       name: 'comprar comida',
@@ -23,7 +23,7 @@ const Home = () => {
     },
     {
       id: 'e16e1fef-a79e-4548-8d42-5a9e3da942a3',
-      name: 'comprar comida',
+      name: 'fazer comida',
       description: 'Arrumar dois comodos',
       date: '2023-10-23T00:00:00.000Z',
       priority: 4,
@@ -31,7 +31,15 @@ const Home = () => {
     },
     {
       id: 'e16e1fef-a79e-4548-8d42-5a9e3da942a4',
-      name: 'comprar comida',
+      name: 'comprar lanche',
+      description: 'Arrumar dois comodos',
+      date: '2023-10-23T00:00:00.000Z',
+      priority: 3,
+      isRoutine: true,
+    },
+    {
+      id: 'e16e1fef-a79e-4548-8d42-5a9e3da942a4',
+      name: 'comprar carro',
       description: 'Arrumar dois comodos',
       date: '2023-10-23T00:00:00.000Z',
       priority: 3,
@@ -40,13 +48,17 @@ const Home = () => {
   ]
   const { data } = useQuery<ResponseTaskInterface>('tasks', async () => {
     const response = await ConfigApi('http://localhost:9999').get('/task')
+    console.log(response)
     return response.data
   })
-
+  console.log(data)
   return (
     <>
       <Wrapper width="400px">
-        <ListItem onClickItem={(e) => console.log(e)} items={teste}></ListItem>
+        <ListItem
+          onClickItem={(e) => console.log(e)}
+          items={data?.results}
+        ></ListItem>
       </Wrapper>
     </>
   )

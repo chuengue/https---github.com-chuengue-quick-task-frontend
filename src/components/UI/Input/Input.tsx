@@ -29,7 +29,7 @@ const Input: FC<InputProps> = ({
             opacity: isTypoVisible ? 1 : 0,
           }}
         >
-          <Typo variant="subtitle" color="gray">
+          <Typo variant="subtitle" color="gray" fontSize="8px">
             {label}
           </Typo>
         </StyledTypoWrapper>

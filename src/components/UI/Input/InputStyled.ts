@@ -38,8 +38,8 @@ export const InputWrapper = styled(Wrapper)`
 `
 export const StyledTypoWrapper = styled(Wrapper)`
   position: absolute;
-  margin-top: -8px;
-  margin-left: 32px;
+  margin-top: -4px;
+  margin-left: 4px;
   justify-content: center;
   align-items: center;
   width: 50px;
