@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
   variant = 'contained',
   onClick,
   children,
+  ...rest
 }) => {
   enum buttonColors {
     primary = 'blue',
@@ -29,6 +30,7 @@ const Button: FC<ButtonProps> = ({
       isRounded={isRounded}
       variant={variant}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </StyledButton>

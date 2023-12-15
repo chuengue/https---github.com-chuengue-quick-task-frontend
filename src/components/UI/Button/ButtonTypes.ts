@@ -1,4 +1,5 @@
 import {
+  BorderProps,
   ColorProps,
   FlexboxProps,
   MarginProps,
@@ -14,6 +15,7 @@ export interface ButtonProps
     PaddingProps,
     PositionProps,
     MarginProps,
+    BorderProps,
     React.HTMLAttributes<HTMLButtonElement> {
   buttonSize?: string
   color?: 'primary' | 'secondary' | 'orange' | 'destruction' | 'white'

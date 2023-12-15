@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import {
+  border,
   color,
   compose,
   flexbox,
@@ -25,6 +26,7 @@ export const StyledButton = styled.button<
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    width: 100%;
     ${isRounded &&
     css`
       border-radius: 50px;
@@ -164,5 +166,5 @@ export const StyledButton = styled.button<
       },
     })}
   `}
-  ${compose(space, layout, position, color, flexbox)}
+  ${compose(space, layout, position, color, flexbox, border)}
 `
