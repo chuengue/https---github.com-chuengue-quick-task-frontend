@@ -20,7 +20,7 @@ import {
   system,
 } from 'styled-system'
 
-interface WrapperInterface
+export interface WrapperInterface
   extends SpaceProps,
     BorderProps,
     PositionProps,

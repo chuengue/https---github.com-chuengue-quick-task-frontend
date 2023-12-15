@@ -1,13 +1,19 @@
+import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
-import { Wrapper } from '..'
+import { Wrapper, WrapperInterface } from '..'
 import Theme from '../../../theme/theme'
 
-export const ListItemWrapper = styled(Wrapper)`
-  flex-direction: column;
+interface SurfaceProps extends WrapperInterface {
+  children: ReactNode
+}
+const Surface: FC<SurfaceProps> = ({ children, ...rest }) => {
+  return <CustomWrapperForSurface {...rest}>{children}</CustomWrapperForSurface>
+}
+export default Surface
+
+export const CustomWrapperForSurface = styled(Wrapper)`
   background: ${Theme.colors.blue.semi};
   overflow: auto;
-  max-height: 80vh;
-  min-height: 20vh;
   width: 100%;
   border-radius: 8px;
   padding: 8px;

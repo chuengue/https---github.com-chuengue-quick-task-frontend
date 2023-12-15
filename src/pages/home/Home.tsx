@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import { ListItem, Wrapper } from '../../components'
+import { TaskView } from '../../components/taskView'
 import ConfigApi from '../../hooks/ConfigApi'
 import { ResponseTaskInterface } from '../../types/task.types'
 
@@ -11,15 +12,16 @@ const Home = () => {
   })
   console.log(data)
   return (
-    <>
-      <Wrapper width="400px" height="80vh" m={28}>
+    <Wrapper flexDirection="row" height="80vh" m={28}>
+      <Wrapper width="400px" marginRight={28}>
         <ListItem
           hasAddNewTaskButton
           onClickItem={(e) => console.log(e)}
           items={data?.results}
         ></ListItem>
       </Wrapper>
-    </>
+      <TaskView></TaskView>
+    </Wrapper>
   )
 }
 

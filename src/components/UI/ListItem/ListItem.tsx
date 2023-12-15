@@ -1,9 +1,8 @@
 import { FC, useState } from 'react'
 import { MdFormatListBulletedAdd } from 'react-icons/md'
 import { ListItemProps } from '.'
-import { Button, Input, Typo, Wrapper } from '..'
+import { Button, Input, Surface, Typo, Wrapper } from '..'
 import Item, { ItemProps } from './Item'
-import { ListItemWrapper } from './ListItemStyled'
 
 const ListItem: FC<ListItemProps> = ({
   items,
@@ -22,7 +21,7 @@ const ListItem: FC<ListItemProps> = ({
   return (
     <>
       {filteredItems && (
-        <ListItemWrapper justifyContent="space-between">
+        <Surface justifyContent="space-between" flexDirection="column">
           <div>
             <Wrapper flexDirection="column" gap="8px" mb={12} ml={8} mt={6}>
               <Typo fontWeight={200} color="white">
@@ -60,7 +59,7 @@ const ListItem: FC<ListItemProps> = ({
               </Button>
             </Wrapper>
           )}
-        </ListItemWrapper>
+        </Surface>
       )}
     </>
   )
