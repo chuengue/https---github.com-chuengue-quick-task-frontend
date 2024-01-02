@@ -1,0 +1,3 @@
+interface GetOneTaskParams {
+  id: string
+}

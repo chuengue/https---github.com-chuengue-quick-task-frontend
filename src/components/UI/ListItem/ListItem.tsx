@@ -1,4 +1,6 @@
 import { FC, useState } from 'react'
+import { IoFileTrayOutline } from 'react-icons/io5'
+
 import { MdFormatListBulletedAdd } from 'react-icons/md'
 import { ListItemProps } from '.'
 import { Button, Input, Surface, Typo, Wrapper } from '..'
@@ -20,10 +22,10 @@ const ListItem: FC<ListItemProps> = ({
 
   return (
     <>
-      {filteredItems && (
-        <Surface justifyContent="space-between" flexDirection="column">
-          <div>
-            <Wrapper flexDirection="column" gap="8px" mb={12} ml={8} mt={6}>
+      <Surface flexDirection="column">
+        {filteredItems?.length ? (
+          <>
+            <Wrapper flexDirection="column" gap="8px" mb={12} mt={6}>
               <Typo fontWeight={200} color="white">
                 TAREFAS
               </Typo>
@@ -33,7 +35,14 @@ const ListItem: FC<ListItemProps> = ({
                 label="Buscar"
               ></Input>
             </Wrapper>
-            <Wrapper flexDirection="column">
+            {hasAddNewTaskButton && (
+              <Wrapper margin={8}>
+                <Button buttonSize="md">
+                  <MdFormatListBulletedAdd color="white" size="28" />
+                </Button>
+              </Wrapper>
+            )}
+            <Surface flexDirection="column" width="100%">
               {filteredItems.map((item: ItemProps, index: number) => (
                 <div key={index} style={{ margin: '2px 0px' }}>
                   <Item
@@ -50,17 +59,22 @@ const ListItem: FC<ListItemProps> = ({
                   )}
                 </div>
               ))}
-            </Wrapper>
-          </div>
-          {hasAddNewTaskButton && (
-            <Wrapper margin={8}>
-              <Button buttonSize="md">
-                <MdFormatListBulletedAdd color="white" size="28" />
-              </Button>
-            </Wrapper>
-          )}
-        </Surface>
-      )}
+            </Surface>
+          </>
+        ) : (
+          <Wrapper
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            height="100%"
+          >
+            <IoFileTrayOutline color="#2b3459" size="68" />
+            <Typo color="gray" fontSize="24px">
+              Você não tem tarefas.
+            </Typo>
+          </Wrapper>
+        )}
+      </Surface>
     </>
   )
 }

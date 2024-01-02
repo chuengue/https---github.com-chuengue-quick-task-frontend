@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import ConfigApi from './ConfigApi'
+import { ResponseTaskInterface } from '../types/task.types'
+import instance from './ConfigApi'
 
-export function useRequest<T = unknown>(url: string) {
-  const [data, setData] = useState<T | null>(null)
-  const api = ConfigApi('http://localhost:9999')
+export function useRequest(url: string, id?: string) {
+  const [data, setData] = useState<ResponseTaskInterface>()
   const [isFetching, setIsFetching] = useState(true)
   const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
-    api
-      .get(url)
+    instance
+      .get(id ? `${url}/${id}` : url)
       .then((response) => {
         setData(response.data)
       })

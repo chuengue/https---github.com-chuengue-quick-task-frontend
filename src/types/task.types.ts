@@ -18,6 +18,11 @@ export interface ResponseTaskInterface {
   results: TaskInterface[]
   totalItens: number
 }
+export interface ResponseTaskOneInterface {
+  sucess: boolean
+  results: TaskInterface
+  totalItens: number
+}
 export interface SearchParams {
   argumentType: 'name' | 'description' | 'priority'
   argument: string
